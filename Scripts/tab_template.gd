@@ -23,7 +23,7 @@ var heads_val_cost = 25
 
 @onready var flip_speed_text = $"Flip-Speed/Text"
 @onready var flip_speed_cost_text = $"Flip-Speed/CostLabel/Flip-Speed Cost"
-var flip_speed_cost = 100
+var flip_speed_cost = 1
 
 @onready var flip_chance_text = $"Flip-Chance/Text"
 @onready var flip_chance_cost_text = $"Flip-Chance/CostLabel/Flip-Chance Cost"

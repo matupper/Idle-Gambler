@@ -6,7 +6,7 @@ var heads_value : int = 0
 var rare_value : int = 1000
 var multiplier : int = 1
 var anim_speed : float = 1
-var rare_chance : int = 1000
+var rare_chance : int = 5
 var flip_chance : int = 2
 var autoflip : bool = false
 var autoflip_speed : float = 4
@@ -21,14 +21,12 @@ var gain = 0
 
 @onready var animation_player = $AnimationPlayer
 @onready var audio_stream = $SFX/AudioStreamPlayer
-@onready var gainLabel = $gain
 
 
 func _ready():
 	globalVars.coins.append(self)
 	if globalVars.coins.size() > 1:
 		self.position = globalVars.table_positions[globalVars.currTable][globalVars.coins.size() - 1]
-	gainLabel.currCoin = globalVars.coins.size() - 1
 
 func _process(_delta):
 	if autoflip and not autoflip_on:
@@ -54,19 +52,16 @@ func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
 func coin_l_clicked():
 	if not animation_player.is_playing():
 		# Play sfx
-		rare_flip = randi_range(1, rare_chance)
-		flip_outcome = randi_range(1, flip_chance)
+		#rare_flip = randi_range(1, rare_chance)
+		flip_outcome = randi_range(1, rare_chance)
 		
-		if rare_flip == 1:
+		if flip_outcome == 1:
 			# Trigger rare flip
 			animation_player.play("Flip Rare")
+		elif flip_outcome % 2 == 0:
+			animation_player.play("Flip Heads")
 		else:
-			if flip_outcome == 1:
-				# Trigger heads
-				animation_player.play("Flip Heads")
-			else:
-				# Trigger tails
-				animation_player.play("Flip Tails")
+			animation_player.play("Flip Tails")
 
 func coin_r_clicked():
 	pass

@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwmf2dggsj3l5"]
+[gd_scene load_steps=14 format=3 uid="uid://bwmf2dggsj3l5"]
 
 [ext_resource type="PackedScene" uid="uid://8h28p758yre2" path="res://Assets/Coin assets/Coin.glb" id="1_jk5jd"]
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="1_qwc5r"]
 [ext_resource type="AudioStream" uid="uid://ckv6vuld4p40y" path="res://Assets/SFX/coinFlip.wav" id="3_2icok"]
 [ext_resource type="AudioStream" uid="uid://chx2n2ctrnkb6" path="res://Assets/SFX/powerUp.wav" id="4_bcocw"]
-[ext_resource type="PackedScene" uid="uid://bqwjnuhx168s5" path="res://Scenes/gain.tscn" id="5_u3sim"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_un6hs"]
 height = 0.242715
@@ -248,8 +247,6 @@ stream = ExtResource("3_2icok")
 [node name="Outline" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118722, 0)
 mesh = SubResource("TorusMesh_qi4ga")
-
-[node name="gain" parent="." instance=ExtResource("5_u3sim")]
 
 [connection signal="input_event" from="Model/Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
