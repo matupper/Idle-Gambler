@@ -16,6 +16,7 @@ var flip_outcome
 var rare_flip
 
 @onready var animation_player = $AnimationPlayer
+@onready var label = $FlipGain/Label
 
 func _ready():
 	globalVars.coins.append(self)
@@ -64,7 +65,10 @@ func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"Flip Rare":
 			globalVars.money += rare_value * multiplier
+			label.mesh.text = str(rare_value * multiplier)
 		"Flip Heads":
 			globalVars.money += heads_value * multiplier
+			label.mesh.text = str(heads_value * multiplier)
 		"Flip Tails":
 			globalVars.money += tails_value * multiplier
+			label.mesh.text = str(tails_value * multiplier)
