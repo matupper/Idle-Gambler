@@ -30,6 +30,7 @@ offset_top = 24.0
 offset_right = 224.0
 offset_bottom = 64.0
 theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 text = " Automatically flips coin every 4 seconds"
 
 [node name="CostLabel" type="Panel" parent="Auto-Flip"]
@@ -65,7 +66,7 @@ offset_bottom = 169.0
 layout_mode = 0
 offset_right = 224.0
 offset_bottom = 24.0
-text = "Multiplier"
+text = " Multiplier"
 
 [node name="Text" type="RichTextLabel" parent="Multiplier"]
 layout_mode = 0
@@ -73,6 +74,7 @@ offset_top = 24.0
 offset_right = 224.0
 offset_bottom = 64.0
 theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 text = " Multiply earnings by 1.5x"
 
 [node name="CostLabel" type="Panel" parent="Multiplier"]
@@ -108,7 +110,7 @@ offset_bottom = 241.0
 layout_mode = 0
 offset_right = 224.0
 offset_bottom = 24.0
-text = "Tails Value"
+text = " Tails Value"
 
 [node name="Text" type="RichTextLabel" parent="Tails-Val"]
 layout_mode = 0
@@ -116,6 +118,7 @@ offset_top = 24.0
 offset_right = 224.0
 offset_bottom = 64.0
 theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 text = " Increase value of tails to $2"
 
 [node name="CostLabel" type="Panel" parent="Tails-Val"]
@@ -152,7 +155,7 @@ offset_bottom = 313.0
 layout_mode = 0
 offset_right = 224.0
 offset_bottom = 24.0
-text = "Heads Value"
+text = " Heads Value"
 
 [node name="Text" type="RichTextLabel" parent="Heads-Val"]
 layout_mode = 0
@@ -160,6 +163,7 @@ offset_top = 24.0
 offset_right = 224.0
 offset_bottom = 64.0
 theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 text = " Increase value of heads to $1"
 
 [node name="CostLabel" type="Panel" parent="Heads-Val"]
@@ -204,6 +208,7 @@ offset_top = 24.0
 offset_right = 224.0
 offset_bottom = 64.0
 theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 text = " Speed up coin flip by 1.1x"
 
 [node name="CostLabel" type="Panel" parent="Flip-Speed"]
@@ -294,6 +299,7 @@ offset_top = 24.0
 offset_right = 224.0
 offset_bottom = 64.0
 theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 text = " Increase chance of special flip by 1.01x"
 
 [node name="CostLabel" type="Panel" parent="Rare-Chance"]

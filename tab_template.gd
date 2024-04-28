@@ -1,6 +1,7 @@
 extends TabBar
 
 var coinNum = 0
+var outline_visible = false
 
 @onready var coin = globalVars.coins[coinNum]
 
@@ -42,6 +43,11 @@ func _process(_delta):
 	if coin != globalVars.coins[coinNum]:
 		coin = globalVars.coins[coinNum]
 	
+	if outline_visible:
+		coin.outline.visible = true
+	else:
+		coin.outline.visible = false
+	
 	_update_cost_texts()
 	_update_texts()
 
@@ -55,8 +61,11 @@ func _update_cost_texts():
 	rare_chance_cost_text.text = "$" + str(rare_chance_cost)
 
 func _update_texts():
-	auto_flip_text.text = " Automatically flips coin every " \
-		+ str(coin.autoflip_speed - .5) + " seconds"
+	if not coin.autoflip:
+		auto_flip_text.text = " Automatically flips coin every 4 seconds"
+	else:
+		auto_flip_text.text = " Automatically flips coin every " \
+			+ str(coin.autoflip_speed - .5) + " seconds"
 	multiplier_text.text = " Multiply earnings by " \
 		+ str(coin.multiplier + 1) + "x"
 	tails_val_text.text = " Increase value of tails to $" \
@@ -109,7 +118,7 @@ func _on_heads_val_button_pressed():
 
 func _on_flip_speed_button_pressed():
 	if _buy(flip_speed_cost):
-		coin.anim_speed -= .1
+		coin.anim_speed += .1
 		flip_speed_cost *= 4
 
 
@@ -123,3 +132,4 @@ func _on_rare_chance_button_pressed():
 	if _buy(rare_chance_cost):
 		coin.rare_chance -= 10
 		rare_chance_cost *= 2.5
+

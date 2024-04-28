@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwmf2dggsj3l5"]
+[gd_scene load_steps=13 format=3 uid="uid://bwmf2dggsj3l5"]
 
 [ext_resource type="PackedScene" uid="uid://8h28p758yre2" path="res://Assets/Coin assets/Coin.glb" id="1_jk5jd"]
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="1_qwc5r"]
@@ -213,11 +213,20 @@ _data = {
 "reset": SubResource("Animation_6eu1g")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0hwt"]
+albedo_color = Color(2, 2, 0.5, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_qi4ga"]
+material = SubResource("StandardMaterial3D_d0hwt")
+outer_radius = 0.6
+rings = 20
+ring_segments = 4
+
 [node name="Coin" type="Node3D"]
 script = ExtResource("1_qwc5r")
 
 [node name="Model" parent="." instance=ExtResource("1_jk5jd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00596619, 0.0858482, -0.0217506)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.086, 0)
 
 [node name="Area3D" type="Area3D" parent="Model"]
 
@@ -233,6 +242,10 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("3_2icok")
+
+[node name="Outline" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118722, 0)
+mesh = SubResource("TorusMesh_qi4ga")
 
 [connection signal="input_event" from="Model/Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

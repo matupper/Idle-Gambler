@@ -7,3 +7,5 @@ offset_left = 864.0
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("1_akmd6")
+
+[connection signal="tab_changed" from="." to="." method="_on_tab_changed"]

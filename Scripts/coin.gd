@@ -15,7 +15,10 @@ var autoflip_on : bool = false
 var flip_outcome
 var rare_flip
 
+@onready var outline = $Outline
+
 @onready var animation_player = $AnimationPlayer
+@onready var audio_stream = $SFX/AudioStreamPlayer
 
 func _ready():
 	globalVars.coins.append(self)
@@ -25,6 +28,9 @@ func _ready():
 func _process(_delta):
 	if autoflip and not autoflip_on:
 		_autoflip_run()
+	
+	animation_player.speed_scale = anim_speed
+	audio_stream.pitch_scale = anim_speed
 
 func _autoflip_run():
 	autoflip_on = true
