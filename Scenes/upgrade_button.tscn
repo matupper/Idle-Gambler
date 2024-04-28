@@ -17,6 +17,21 @@ depth = 0.003
 [sub_resource type="BoxShape3D" id="BoxShape3D_urxya"]
 size = Vector3(0.10025, 0.169189, 0.123291)
 
+[sub_resource type="Animation" id="Animation_6my31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.16, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_0l3is"]
 resource_name = "move_away"
 length = 0.25
@@ -31,21 +46,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0.16, 0), Vector3(0.5, 0.16, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_6my31"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.16, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_w0t55"]

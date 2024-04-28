@@ -6,7 +6,7 @@ var heads_value : int = 0
 var rare_value : int = 1000
 var multiplier : int = 1
 var anim_speed : float = 1
-var rare_chance : int = 5
+var rare_chance : int = 1000
 var flip_chance : int = 2
 var autoflip : bool = false
 var autoflip_speed : float = 4
@@ -20,7 +20,7 @@ var rare_flip
 func _ready():
 	globalVars.coins.append(self)
 	if globalVars.coins.size() > 1:
-		self.position.x = globalVars.coins[globalVars.coins.size() - 2].position.x - 1.5
+		self.position = globalVars.table_positions[globalVars.currTable][globalVars.coins.size() - 1]
 
 func _process(_delta):
 	if autoflip and not autoflip_on:
