@@ -15,16 +15,20 @@ var autoflip_on : bool = false
 var flip_outcome
 var rare_flip
 
+var gain = 0
+
 @onready var outline = $Outline
 
 @onready var animation_player = $AnimationPlayer
 @onready var audio_stream = $SFX/AudioStreamPlayer
-@onready var label = $FlipGain/Label
+@onready var gainLabel = $gain
+
 
 func _ready():
 	globalVars.coins.append(self)
 	if globalVars.coins.size() > 1:
 		self.position = globalVars.table_positions[globalVars.currTable][globalVars.coins.size() - 1]
+	gainLabel.currCoin = globalVars.coins.size() - 1
 
 func _process(_delta):
 	if autoflip and not autoflip_on:
@@ -70,11 +74,11 @@ func coin_r_clicked():
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"Flip Rare":
-			globalVars.money += rare_value * multiplier
-			label.mesh.text = str(rare_value * multiplier)
+			gain = rare_value * multiplier
+			globalVars.money += gain
 		"Flip Heads":
-			globalVars.money += heads_value * multiplier
-			label.mesh.text = str(heads_value * multiplier)
+			gain = heads_value * multiplier
+			globalVars.money += gain
 		"Flip Tails":
-			globalVars.money += tails_value * multiplier
-			label.mesh.text = str(tails_value * multiplier)
+			gain = tails_value * multiplier
+			globalVars.money += gain

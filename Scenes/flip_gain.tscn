@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://caemxo5jtjvr"]
+[gd_scene load_steps=6 format=3 uid="uid://caemxo5jtjvr"]
+
+[ext_resource type="Script" path="res://Scenes/flip_gain.gd" id="1_yx7aq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2adk3"]
 albedo_color = Color(1.5, 1.5, 1.5, 1)
 
-[sub_resource type="TextMesh" id="TextMesh_m54wu"]
+[sub_resource type="TextMesh" id="TextMesh_mgqg6"]
 material = SubResource("StandardMaterial3D_2adk3")
 text = "0"
 font_size = 10
@@ -13,7 +15,7 @@ depth = 0.025
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2gr7"]
 albedo_color = Color(1, 1.5, 1, 1)
 
-[sub_resource type="TextMesh" id="TextMesh_267e2"]
+[sub_resource type="TextMesh" id="TextMesh_ce5ve"]
 material = SubResource("StandardMaterial3D_j2gr7")
 text = "+
 "
@@ -21,11 +23,12 @@ font_size = 12
 depth = 0.025
 
 [node name="FlipGain" type="Node3D"]
+script = ExtResource("1_yx7aq")
 
 [node name="Label" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0728772, 0, 0)
-mesh = SubResource("TextMesh_m54wu")
+mesh = SubResource("TextMesh_mgqg6")
 
 [node name="+ Sign" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999992, -0.003582, 0.00199987, 0.00358306, 0.999993, -0.000525297, -0.00199797, 0.000532482, 0.999998, -0.0499255, 0, 0)
-mesh = SubResource("TextMesh_267e2")
+mesh = SubResource("TextMesh_ce5ve")

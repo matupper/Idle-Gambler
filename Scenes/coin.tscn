@@ -1,29 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwmf2dggsj3l5"]
+[gd_scene load_steps=15 format=3 uid="uid://bwmf2dggsj3l5"]
 
 [ext_resource type="PackedScene" uid="uid://8h28p758yre2" path="res://Assets/Coin assets/Coin.glb" id="1_jk5jd"]
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="1_qwc5r"]
 [ext_resource type="AudioStream" uid="uid://ckv6vuld4p40y" path="res://Assets/SFX/coinFlip.wav" id="3_2icok"]
 [ext_resource type="AudioStream" uid="uid://chx2n2ctrnkb6" path="res://Assets/SFX/powerUp.wav" id="4_bcocw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2adk3"]
-albedo_color = Color(1.5, 1.5, 1.5, 1)
-
-[sub_resource type="TextMesh" id="TextMesh_m54wu"]
-material = SubResource("StandardMaterial3D_2adk3")
-text = "0"
-font_size = 10
-horizontal_alignment = 2
-depth = 0.025
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2gr7"]
-albedo_color = Color(1, 1.5, 1, 1)
-
-[sub_resource type="TextMesh" id="TextMesh_267e2"]
-material = SubResource("StandardMaterial3D_j2gr7")
-text = "+
-"
-font_size = 12
-depth = 0.025
+[ext_resource type="PackedScene" uid="uid://bqwjnuhx168s5" path="res://Scenes/gain.tscn" id="5_u3sim"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_un6hs"]
 height = 0.242715
@@ -246,17 +227,6 @@ ring_segments = 4
 [node name="Coin" type="Node3D"]
 script = ExtResource("1_qwc5r")
 
-[node name="FlipGain" type="Node3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.5, 0)
-
-[node name="Label" type="MeshInstance3D" parent="FlipGain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0728772, 0, 0)
-mesh = SubResource("TextMesh_m54wu")
-
-[node name="+ Sign" type="MeshInstance3D" parent="FlipGain"]
-transform = Transform3D(0.999992, -0.003582, 0.00199987, 0.00358306, 0.999993, -0.000525297, -0.00199797, 0.000532482, 0.999998, -0.0499255, 0, 0)
-mesh = SubResource("TextMesh_267e2")
-
 [node name="Model" parent="." instance=ExtResource("1_jk5jd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.086, 0)
 
@@ -278,6 +248,8 @@ stream = ExtResource("3_2icok")
 [node name="Outline" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118722, 0)
 mesh = SubResource("TorusMesh_qi4ga")
+
+[node name="gain" parent="." instance=ExtResource("5_u3sim")]
 
 [connection signal="input_event" from="Model/Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

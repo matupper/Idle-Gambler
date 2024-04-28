@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqwjnuhx168s5"]
+
+[ext_resource type="Script" path="res://Scenes/gain.gd" id="1_61cbo"]
+
+[sub_resource type="TextMesh" id="TextMesh_jne6j"]
+text = "0"
+
+[sub_resource type="TextMesh" id="TextMesh_u45xw"]
+text = "+"
+
+[node name="gain" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.5, 0)
+script = ExtResource("1_61cbo")
+
+[node name="amount" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
+mesh = SubResource("TextMesh_jne6j")
+
+[node name="sign" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
+mesh = SubResource("TextMesh_u45xw")
