@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ge84eehfuudo"]
 
-[ext_resource type="Script" path="res://Scenes/add_coin_button.gd" id="1_iq8gd"]
+[ext_resource type="Script" path="res://Scripts/add_coin_button.gd" id="1_iq8gd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1gec"]
 albedo_color = Color(1.25, 1.25, 1.25, 1)

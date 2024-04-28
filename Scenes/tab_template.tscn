@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://boxpe0fs6jy6u"]
 
-[ext_resource type="Script" path="res://tab_template.gd" id="1_hmqvx"]
+[ext_resource type="Script" path="res://Scripts/tab_template.gd" id="1_hmqvx"]
 
 [node name="Tab" type="TabBar"]
 anchors_preset = 15
