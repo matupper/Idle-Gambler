@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://p8qio2kn8lnr"]
+[gd_scene load_steps=9 format=3 uid="uid://p8qio2kn8lnr"]
 
 [ext_resource type="Script" path="res://Scenes/upgrade_button.gd" id="1_qr6c6"]
 
@@ -12,9 +12,64 @@ _
 _"
 font_size = 30
 line_spacing = -35.0
+depth = 0.003
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_urxya"]
 size = Vector3(0.10025, 0.169189, 0.123291)
+
+[sub_resource type="Animation" id="Animation_0l3is"]
+resource_name = "move_away"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.16, 0), Vector3(0.5, 0.16, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6my31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.16, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w0t55"]
+resource_name = "move_back"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.5, 0.16, 0), Vector3(0, 0.16, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_36tiq"]
+_data = {
+"RESET": SubResource("Animation_6my31"),
+"move_away": SubResource("Animation_0l3is"),
+"move_back": SubResource("Animation_w0t55")
+}
 
 [node name="Upgrade_Button" type="Node3D"]
 script = ExtResource("1_qr6c6")
@@ -28,5 +83,10 @@ mesh = SubResource("TextMesh_tx3hk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008255, -0.161499, 0.010376)
 shape = SubResource("BoxShape3D_urxya")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_36tiq")
+}
 
 [connection signal="input_event" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_input_event"]

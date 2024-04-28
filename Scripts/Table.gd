@@ -15,7 +15,7 @@ enum Level {
 var current_level = Level.ONE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# Update table model
 	match current_level:
 		Level.ONE:
