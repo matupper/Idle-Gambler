@@ -1,54 +1,55 @@
 extends Node3D
 
-var rare_chance = 1000
-var flip_chance = randi_range(1, 2)
+#UPGRADES
+var tails_value : int = 1
+var heads_value : int = 0
+var rare_value : int = 1000
+var multiplier : int = 1
+var anim_speed : int = 1
+var rare_chance : int = 1000
+var flip_chance : int = 2
+var autoflip : bool = false
+var autoflip_speed : int = 4
+
+var flip_outcome
 var rare_flip
 
 @onready var animation_player = $AnimationPlayer
-@onready var upgrade_menu = $Control
 
-signal flipped_heads()
-signal flipped_tails()
-signal flipped_rare()
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	set_process_input(true)
-	pass # Replace with function body.
+	globalVars.coins.append(self)
 
-func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		coin_l_clicked()
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		coin_r_clicked()
-	pass # Replace with function body.
+func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			coin_l_clicked()
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			coin_r_clicked()
 
 func coin_l_clicked():
 	# Play sfx
 	rare_flip = randi_range(1, rare_chance)
-	flip_chance = randi_range(1, 2)
+	flip_outcome = randi_range(1, flip_chance)
 	
 	if rare_flip == 1:
 		# Trigger rare flip
 		animation_player.play("Flip Rare")
 	else:
-		if flip_chance == 1:
+		if flip_outcome == 1:
 			# Trigger heads
 			animation_player.play("Flip Heads")
 		else:
 			# Trigger tails
 			animation_player.play("Flip Tails")
-			
 
 func coin_r_clicked():
-	upgrade_menu.visible = not upgrade_menu.visible
-	
+	pass
 
 func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "Flip Rare":
-		emit_signal("flipped_rare")
-	if anim_name == "Flip Heads":
-		emit_signal("flipped_heads")
-	if anim_name == "Flip Tails":
-		emit_signal("flipped_tails")
-	pass # Replace with function body.
+	match anim_name:
+		"Flip Rare":
+			globalVars.money += rare_value * multiplier
+		"Flip Heads":
+			globalVars.money += heads_value * multiplier
+		"Flip Tails":
+			globalVars.money += tails_value * multiplier
