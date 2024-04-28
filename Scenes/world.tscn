@@ -1,7 +1,5 @@
 [gd_scene load_steps=9 format=3 uid="uid://bdsyiicjq00x"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_38fqi"]
-[ext_resource type="PackedScene" uid="uid://f78cwfmvs1fn" path="res://Scenes/table.tscn" id="1_rv2uo"]
 [ext_resource type="PackedScene" uid="uid://c17mgjr7ai2gt" path="res://Scenes/upgrade_ui.tscn" id="1_6iudb"]
 [ext_resource type="PackedScene" uid="uid://bwmf2dggsj3l5" path="res://Scenes/coin.tscn" id="1_vkyyl"]
 [ext_resource type="PackedScene" uid="uid://cemfsmp6668my" path="res://Scenes/money_label.tscn" id="1_x6m2r"]
@@ -14,16 +12,16 @@ glow_enabled = true
 glow_intensity = 1.0
 glow_blend_mode = 0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grpjo"]
+albedo_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_xqq88"]
+
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x744l")
 
-[node name="Table" parent="." instance=ExtResource("1_rv2uo")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 4)
-fov = 90.0
 [node name="Lights" type="Node3D" parent="."]
 
 [node name="Down Light" type="DirectionalLight3D" parent="Lights"]
@@ -33,6 +31,14 @@ transform = Transform3D(1, -8.97729e-16, -2.50718e-08, 2.50718e-08, 3.58063e-08,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
 light_energy = 0.0
 
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(16.9058, 0, 0, 0, 6.32801e-07, 1, 0, 14.4768, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_grpjo")
+mesh = SubResource("QuadMesh_xqq88")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573577, 0, -0.573577, 0.819152, 0, 5, 5)
+fov = 87.0135
 
 [node name="Upgrade_UI" parent="Camera3D" instance=ExtResource("1_6iudb")]
 
@@ -48,19 +54,3 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 2.98023e-08, 0, -2.98023e-08, 0.6, 0.
 transform = Transform3D(0.7, 0, 0, 0, 0.239414, 0.657785, 0, -0.657785, 0.239414, 0.12, 3.89833, 4.64706)
 
 [node name="Coin 1" parent="Player" instance=ExtResource("1_vkyyl")]
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("3_1rldk")
-
-[node name="Money" type="Label" parent="UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 62.0
-offset_right = 20.0
-offset_bottom = 85.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_hava2")
-horizontal_alignment = 1
-vertical_alignment = 1
