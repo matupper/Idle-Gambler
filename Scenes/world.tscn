@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdsyiicjq00x"]
+[gd_scene load_steps=9 format=3 uid="uid://bdsyiicjq00x"]
 
 [ext_resource type="PackedScene" uid="uid://c17mgjr7ai2gt" path="res://Scenes/upgrade_ui.tscn" id="1_6iudb"]
 [ext_resource type="PackedScene" uid="uid://f78cwfmvs1fn" path="res://Scenes/table.tscn" id="1_bib7j"]
@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://p8qio2kn8lnr" path="res://Scenes/upgrade_button.tscn" id="3_j8fbb"]
 
 [sub_resource type="Environment" id="Environment_x744l"]
-background_mode = 2
+background_color = Color(0.529412, 0.819608, 1, 1)
 glow_enabled = true
 glow_intensity = 1.0
 glow_blend_mode = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ekx30"]
 
 [node name="World" type="Node3D"]
 
@@ -25,8 +27,13 @@ transform = Transform3D(1, -8.97729e-16, -2.50718e-08, 2.50718e-08, 3.58063e-08,
 
 [node name="Face Light" type="DirectionalLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
+light_energy = 0.2
 
 [node name="Table" parent="." instance=ExtResource("1_bib7j")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, -2.18557e-06, 50, 0, -50, -2.18557e-06, 0, -3.9733, 0)
+mesh = SubResource("QuadMesh_ekx30")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573577, 0, -0.573577, 0.819152, 0, 5, 5)

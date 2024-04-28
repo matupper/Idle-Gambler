@@ -10,9 +10,11 @@ script = ExtResource("1_pslnw")
 
 [node name="Table1" parent="." instance=ExtResource("2_nkh28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3, 0)
+visible = false
 
 [node name="Table2" parent="." instance=ExtResource("3_up3ar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37, 0)
+visible = false
 
 [node name="Table3" parent="." instance=ExtResource("4_p6n55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.62, 0)
