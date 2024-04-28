@@ -1,0 +1,323 @@
+[gd_scene load_steps=2 format=3 uid="uid://boxpe0fs6jy6u"]
+
+[ext_resource type="Script" path="res://tab_template.gd" id="1_hmqvx"]
+
+[node name="Tab" type="TabBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 864.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmqvx")
+
+[node name="Auto-Flip" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 288.0
+offset_bottom = 97.0
+
+[node name="Title" type="RichTextLabel" parent="Auto-Flip"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 24.0
+text = " Auto-Flip"
+
+[node name="Text" type="RichTextLabel" parent="Auto-Flip"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 12
+text = " Automatically flips coin every 4 seconds"
+
+[node name="CostLabel" type="Panel" parent="Auto-Flip"]
+layout_mode = 0
+offset_left = 224.0
+offset_right = 288.0
+offset_bottom = 40.0
+
+[node name="Auto-Flip Cost" type="Label" parent="Auto-Flip/CostLabel"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Auto-Flip Button" type="Button" parent="Auto-Flip"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="Multiplier" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 105.0
+offset_right = 288.0
+offset_bottom = 169.0
+
+[node name="Title" type="RichTextLabel" parent="Multiplier"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 24.0
+text = "Multiplier"
+
+[node name="Text" type="RichTextLabel" parent="Multiplier"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 12
+text = " Multiply earnings by 1.5x"
+
+[node name="CostLabel" type="Panel" parent="Multiplier"]
+layout_mode = 0
+offset_left = 224.0
+offset_right = 288.0
+offset_bottom = 40.0
+
+[node name="Multiplier Cost" type="Label" parent="Multiplier/CostLabel"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Multiplier Button" type="Button" parent="Multiplier"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="Tails-Val" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 177.0
+offset_right = 288.0
+offset_bottom = 241.0
+
+[node name="Title" type="RichTextLabel" parent="Tails-Val"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 24.0
+text = "Tails Value"
+
+[node name="Text" type="RichTextLabel" parent="Tails-Val"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 12
+text = " Increase value of tails to $2"
+
+[node name="CostLabel" type="Panel" parent="Tails-Val"]
+layout_mode = 0
+offset_left = 224.0
+offset_right = 288.0
+offset_bottom = 40.0
+
+[node name="Tails-Val Cost" type="Label" parent="Tails-Val/CostLabel"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Tails-Val Button" type="Button" parent="Tails-Val"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="Heads-Val" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 249.0
+offset_right = 288.0
+offset_bottom = 313.0
+
+[node name="Title" type="RichTextLabel" parent="Heads-Val"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 24.0
+text = "Heads Value"
+
+[node name="Text" type="RichTextLabel" parent="Heads-Val"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 12
+text = " Increase value of heads to $1"
+
+[node name="CostLabel" type="Panel" parent="Heads-Val"]
+layout_mode = 0
+offset_left = 224.0
+offset_right = 288.0
+offset_bottom = 40.0
+
+[node name="Heads-Val Cost" type="Label" parent="Heads-Val/CostLabel"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Heads-Val Button" type="Button" parent="Heads-Val"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="Flip-Speed" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 321.0
+offset_right = 288.0
+offset_bottom = 385.0
+
+[node name="Title" type="RichTextLabel" parent="Flip-Speed"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 24.0
+text = " Flip Speed"
+
+[node name="Text" type="RichTextLabel" parent="Flip-Speed"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 12
+text = " Speed up coin flip by 1.1x"
+
+[node name="CostLabel" type="Panel" parent="Flip-Speed"]
+layout_mode = 0
+offset_left = 224.0
+offset_right = 288.0
+offset_bottom = 40.0
+
+[node name="Flip-Speed Cost" type="Label" parent="Flip-Speed/CostLabel"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Flip-Speed Button" type="Button" parent="Flip-Speed"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="Flip-Chance" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 393.0
+offset_right = 288.0
+offset_bottom = 457.0
+
+[node name="Title" type="RichTextLabel" parent="Flip-Chance"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 24.0
+text = " Flip Chance"
+
+[node name="Text" type="RichTextLabel" parent="Flip-Chance"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/italics_font_size = 10
+bbcode_enabled = true
+text = " Increase chance to land on tails by 1.25x"
+
+[node name="CostLabel" type="Panel" parent="Flip-Chance"]
+layout_mode = 0
+offset_left = 224.0
+offset_right = 288.0
+offset_bottom = 40.0
+
+[node name="Flip-Chance Cost" type="Label" parent="Flip-Chance/CostLabel"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Flip-Chance Button" type="Button" parent="Flip-Chance"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="Rare-Chance" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 465.0
+offset_right = 288.0
+offset_bottom = 529.0
+
+[node name="Title" type="RichTextLabel" parent="Rare-Chance"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 24.0
+text = " Special Chance"
+
+[node name="Text" type="RichTextLabel" parent="Rare-Chance"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 12
+text = " Increase chance of special flip by 1.01x"
+
+[node name="CostLabel" type="Panel" parent="Rare-Chance"]
+layout_mode = 0
+offset_left = 224.0
+offset_right = 288.0
+offset_bottom = 40.0
+
+[node name="Rare-Chance Cost" type="Label" parent="Rare-Chance/CostLabel"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Rare-Chance Button" type="Button" parent="Rare-Chance"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 288.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[connection signal="pressed" from="Multiplier/Multiplier Button" to="." method="_on_multiplier_button_pressed"]

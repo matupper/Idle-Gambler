@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ge84eehfuudo"]
+
+[ext_resource type="Script" path="res://Scenes/add_coin_button.gd" id="1_iq8gd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1gec"]
+albedo_color = Color(1.25, 1.25, 1.25, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_fjrg1"]
+material = SubResource("StandardMaterial3D_v1gec")
+text = "10"
+font_size = 10
+horizontal_alignment = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moqxx"]
+albedo_color = Color(1, 1.25, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_dgyly"]
+material = SubResource("StandardMaterial3D_moqxx")
+text = "Buy Coin: $"
+font_size = 10
+horizontal_alignment = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jyrcr"]
+size = Vector3(0.678177, 0.107651, 0.0743408)
+
+[node name="Add_Coin_Button" type="Node3D"]
+script = ExtResource("1_iq8gd")
+
+[node name="Price" type="MeshInstance3D" parent="."]
+mesh = SubResource("TextMesh_fjrg1")
+
+[node name="Buy" type="MeshInstance3D" parent="."]
+mesh = SubResource("TextMesh_dgyly")
+
+[node name="Area3D" type="Area3D" parent="Buy"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buy/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206398, -0.00432585, -0.00592041)
+shape = SubResource("BoxShape3D_jyrcr")
+
+[connection signal="input_event" from="Buy/Area3D" to="." method="_on_area_3d_input_event"]

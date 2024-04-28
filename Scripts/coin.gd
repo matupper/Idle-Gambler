@@ -18,6 +18,8 @@ var rare_flip
 
 func _ready():
 	globalVars.coins.append(self)
+	if globalVars.coins.size() > 1:
+		self.position.x = globalVars.coins[globalVars.coins.size() - 2].position.x - 1.25
 
 func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:

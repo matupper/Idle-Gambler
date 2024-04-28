@@ -8,7 +8,7 @@ func _process(_delta):
 	_checkMoney()
 
 func _checkMoney():
-	if currMoney < globalVars.money:
+	if not currMoney == globalVars.money:
 		currMoney = globalVars.money
 		moneyText.mesh.text = str(currMoney)
 		$AnimationPlayer.play("add_money")

@@ -22,6 +22,7 @@ globalVars="*res://Scripts/globalVars.gd"
 [display]
 
 window/size/mode=2
+window/stretch/mode="canvas_items"
 
 [rendering]
 

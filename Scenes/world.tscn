@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdsyiicjq00x"]
+[gd_scene load_steps=9 format=3 uid="uid://bdsyiicjq00x"]
 
 [ext_resource type="PackedScene" uid="uid://c17mgjr7ai2gt" path="res://Scenes/upgrade_ui.tscn" id="1_6iudb"]
 [ext_resource type="PackedScene" uid="uid://bwmf2dggsj3l5" path="res://Scenes/coin.tscn" id="1_vkyyl"]
 [ext_resource type="PackedScene" uid="uid://cemfsmp6668my" path="res://Scenes/money_label.tscn" id="1_x6m2r"]
+[ext_resource type="PackedScene" uid="uid://ge84eehfuudo" path="res://Scenes/add_coin_button.tscn" id="3_b3q1p"]
+[ext_resource type="PackedScene" uid="uid://p8qio2kn8lnr" path="res://Scenes/upgrade_button.tscn" id="3_j8fbb"]
 
 [sub_resource type="Environment" id="Environment_x744l"]
 background_mode = 2
@@ -43,8 +45,12 @@ fov = 87.0135
 [node name="MoneyLabel" parent="Camera3D" instance=ExtResource("1_x6m2r")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.4, 0.8, -1)
 
+[node name="Upgrade_Button" parent="Camera3D" instance=ExtResource("3_j8fbb")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 2.98023e-08, 0, -2.98023e-08, 0.6, 0.961, 0.5, -0.638)
+
 [node name="Player" type="Node3D" parent="."]
 
-[node name="Coins" type="Node3D" parent="Player"]
+[node name="Add_Coin_Button" parent="Player" instance=ExtResource("3_b3q1p")]
+transform = Transform3D(0.7, 0, 0, 0, 0.239414, 0.657785, 0, -0.657785, 0.239414, 0.12, 3.89833, 4.64706)
 
-[node name="Coin 1" parent="Player/Coins" instance=ExtResource("1_vkyyl")]
+[node name="Coin 1" parent="Player" instance=ExtResource("1_vkyyl")]
