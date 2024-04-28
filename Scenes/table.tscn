@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://f78cwfmvs1fn"]
+
+[ext_resource type="Script" path="res://Scripts/Table.gd" id="1_pslnw"]
+[ext_resource type="PackedScene" uid="uid://rvh7nkwkgvd5" path="res://Assets/Table assets/Table1/Table1.gltf" id="2_nkh28"]
+[ext_resource type="PackedScene" uid="uid://dg1uccpn8jkxi" path="res://Assets/Table assets/Table2/Table2.gltf" id="3_up3ar"]
+[ext_resource type="PackedScene" uid="uid://vii06cxix5ec" path="res://Assets/Table assets/Table3/Table3.gltf" id="4_p6n55"]
+
+[node name="Table" type="Node3D"]
+script = ExtResource("1_pslnw")
+
+[node name="Table1" parent="." instance=ExtResource("2_nkh28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3, 0)
+
+[node name="Table2" parent="." instance=ExtResource("3_up3ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37, 0)
+
+[node name="Table3" parent="." instance=ExtResource("4_p6n55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.62, 0)
