@@ -17,5 +17,5 @@ func _process(_delta):
 		currNumCoins += 1
 		var newTab = tabTemplate.instantiate()
 		add_child(newTab)
-		newTab.coin = globalVars.coins.size() - 1
+		newTab.coinNum = globalVars.coins.size() - 1
 		newTab.name = "Coin "+ str(currNumCoins)
