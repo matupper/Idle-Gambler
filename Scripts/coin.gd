@@ -6,7 +6,7 @@ var heads_value : int = 0
 var rare_value : int = 1000
 var multiplier : int = 1
 var anim_speed : float = 1
-var rare_chance : int = 5
+var rare_chance : int = 1000
 var flip_chance : int = 2
 var autoflip : bool = false
 var autoflip_speed : float = 4
@@ -58,7 +58,7 @@ func coin_l_clicked():
 		if flip_outcome == 1:
 			# Trigger rare flip
 			animation_player.play("Flip Rare")
-		elif flip_outcome % 2 == 0:
+		elif flip_outcome % flip_chance == 0:
 			animation_player.play("Flip Heads")
 		else:
 			animation_player.play("Flip Tails")

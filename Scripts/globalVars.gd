@@ -2,7 +2,7 @@ extends Node
 
 var coins = []
 
-var money = 1002
+var money = 0
 
 var total_flips = 0
 
