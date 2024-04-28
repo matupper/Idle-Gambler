@@ -3,6 +3,7 @@ extends Node3D
 var total_flips = 0
 
 var money = 0
+
 var h_val = 0
 var h_mul = 1
 var t_val = 1
@@ -19,9 +20,6 @@ func _ready():
 func _process(delta):
 	print(total_flips)
 	pass
-	
-
-
 
 func _on_coin_1_flipped_heads():
 	var h_winnings = h_mul * h_val
