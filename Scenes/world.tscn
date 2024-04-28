@@ -1,26 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdsyiicjq00x"]
+[gd_scene load_steps=7 format=3 uid="uid://bdsyiicjq00x"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_38fqi"]
+[ext_resource type="PackedScene" uid="uid://f78cwfmvs1fn" path="res://Scenes/table.tscn" id="1_rv2uo"]
 [ext_resource type="PackedScene" uid="uid://bwmf2dggsj3l5" path="res://Scenes/coin.tscn" id="1_vkyyl"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="3_1rldk"]
 [ext_resource type="FontFile" uid="uid://bydbsoi1mfcgb" path="res://Assets/Fonts/depixel/DePixelHalbfett.ttf" id="4_hava2"]
 
 [sub_resource type="Environment" id="Environment_x744l"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grpjo"]
-albedo_color = Color(0.611765, 0.611765, 0.611765, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_xqq88"]
-
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x744l")
 
-[node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(16.9058, 0, 0, 0, 6.32801e-07, 1, 0, 14.4768, -4.37114e-08, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_grpjo")
-mesh = SubResource("QuadMesh_xqq88")
+[node name="Table" parent="." instance=ExtResource("1_rv2uo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.33149, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.722702, 0.69116, 0, -0.69116, 0.722702, 0.045653, 5.414, 4.12485)
