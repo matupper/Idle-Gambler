@@ -17,19 +17,24 @@ var current_level = Level.ONE
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	# Update table model
+	match globalVars.currTable:
+		0:
+			current_level = Level.ONE
+		1:
+			current_level = Level.TWO
+		2:
+			current_level = Level.THREE
+	
 	match current_level:
 		Level.ONE:
-			globalVars.currTable = 0
 			table1.visible = true
 			table2.visible = false
 			table3.visible = false
 		Level.TWO:
-			globalVars.currTable = 1
 			table1.visible = false
 			table2.visible = true
 			table3.visible = false
 		Level.THREE:
-			globalVars.currTable = 3
 			table1.visible = false
 			table2.visible = false
 			table3.visible = true

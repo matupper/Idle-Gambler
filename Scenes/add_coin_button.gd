@@ -7,25 +7,29 @@ extends Node3D
 
 var cost = 1
 
-var sold_out : bool = false
+var table_upgrade : bool = false
+var table_cost = 250
 
 func _process(_delta):
 	cost_text.mesh.text = str(cost)
-	if globalVars.coins.size() >= globalVars.table_positions[globalVars.currTable].size():
-		sold_out = true
-		cost_text.visible = false
-		buy_text.mesh.text = "Sold Out"
+	if globalVars.coins.size() >= globalVars.table_positions[globalVars.currTable].size() and globalVars.currTable < 2:
+		table_upgrade = true
+		cost_text.mesh.text = str(table_cost)
+		buy_text.mesh.text = "Upgrade Table: $"
 		buy_text.mesh.material.albedo_color = Color(2, 1, 1)
 	else:
 		buy_text.mesh.material.albedo_color = Color(1, 2, 1)
-		sold_out = false
-		cost_text.visible = true
+		table_upgrade = false
 		buy_text.mesh.text = "Buy Coin: $"
 
 func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		if not sold_out and globalVars.money >= cost:
+		if not table_upgrade and globalVars.money >= cost:
 			globalVars.money -= cost
 			var newCoin = coinTemplate.instantiate()
 			player.add_child(newCoin)
 			cost *= 3
+		elif table_upgrade:
+			if globalVars.money >= table_cost:
+				globalVars.currTable += 1
+				table_cost *= 10
