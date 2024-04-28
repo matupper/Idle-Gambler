@@ -1,12 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://bdsyiicjq00x"]
+[gd_scene load_steps=8 format=3 uid="uid://bdsyiicjq00x"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_38fqi"]
-[ext_resource type="Script" path="res://Scripts/coin.gd" id="2_lx1x7"]
+[ext_resource type="PackedScene" uid="uid://bwmf2dggsj3l5" path="res://Scenes/coin.tscn" id="1_vkyyl"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="3_1rldk"]
-[ext_resource type="PackedScene" uid="uid://8h28p758yre2" path="res://Assets/Coin assets/Coin.glb" id="3_pi4fe"]
-[ext_resource type="Script" path="res://Scripts/better_bets.gd" id="4_aqjpy"]
 [ext_resource type="FontFile" uid="uid://bydbsoi1mfcgb" path="res://Assets/Fonts/depixel/DePixelHalbfett.ttf" id="4_hava2"]
-[ext_resource type="Texture2D" uid="uid://c8x2lh72bfgg1" path="res://Assets/Icons/placeholder img.webp" id="5_2ov2y"]
 
 [sub_resource type="Environment" id="Environment_x744l"]
 
@@ -14,127 +11,6 @@
 albedo_color = Color(0.611765, 0.611765, 0.611765, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_xqq88"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_un6hs"]
-height = 0.242715
-radius = 0.863321
-
-[sub_resource type="Animation" id="Animation_xrm06"]
-resource_name = "Flip Heads"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Model:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(0.295322, 4.43828, 1),
-"update": 0,
-"values": [Vector3(0.00596619, 0.0858482, -0.0217506), Vector3(0.00596619, 5.11292, -0.0217506), Vector3(0.00596619, 0.0858482, -0.0217506)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Model:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-31.4159, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_cfucj"]
-resource_name = "Flip Rare"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Model:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(0.295322, 4.43828, 1),
-"update": 0,
-"values": [Vector3(0.00596619, 0.0858482, -0.0217506), Vector3(0.00596619, 5.11292, -0.0217506), Vector3(0.00596619, 0.485848, -0.0217506)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Model:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 0.329877, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-32.9867, 0, 0), Vector3(-32.9867, 25.1327, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gtp8p"]
-resource_name = "Flip Tails"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Model:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(0.295322, 4.43828, 1),
-"update": 0,
-"values": [Vector3(0.00596619, 0.0858482, -0.0217506), Vector3(0.00596619, 5.11292, -0.0217506), Vector3(0.00596619, 0.0858482, -0.0217506)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Model:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-34.5575, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_6eu1g"]
-resource_name = "reset"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Model:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.00596619, 0.0858482, -0.0217506)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Model:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_41r78"]
-_data = {
-"Flip Heads": SubResource("Animation_xrm06"),
-"Flip Rare": SubResource("Animation_cfucj"),
-"Flip Tails": SubResource("Animation_gtp8p"),
-"reset": SubResource("Animation_6eu1g")
-}
 
 [node name="World" type="Node3D"]
 
@@ -156,65 +32,7 @@ transform = Transform3D(0.993766, 0.0447168, 0.10213, -0.0945324, -0.14769, 0.98
 [node name="Player" type="Node3D" parent="."]
 script = ExtResource("1_38fqi")
 
-[node name="Coin 1" type="Node3D" parent="Player"]
-script = ExtResource("2_lx1x7")
-
-[node name="Model" parent="Player/Coin 1" instance=ExtResource("3_pi4fe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00596619, 0.0858482, -0.0217506)
-
-[node name="Area3D" type="Area3D" parent="Player/Coin 1/Model"]
-
-[node name="ClickBox" type="CollisionShape3D" parent="Player/Coin 1/Model/Area3D"]
-shape = SubResource("CylinderShape3D_un6hs")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Coin 1"]
-libraries = {
-"": SubResource("AnimationLibrary_41r78")
-}
-
-[node name="Control" type="Control" parent="Player/Coin 1"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1076.52
-offset_top = 367.966
-offset_right = 2276.52
-offset_bottom = 1017.97
-scale = Vector2(0.321735, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Player/Coin 1/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 45
-
-[node name="Better Bets Upgrade" type="Control" parent="Player/Coin 1/Control/VBoxContainer"]
-layout_mode = 2
-script = ExtResource("4_aqjpy")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Player/Coin 1/Control/VBoxContainer/Better Bets Upgrade"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="Player/Coin 1/Control/VBoxContainer/Better Bets Upgrade/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_2ov2y")
-expand_mode = 2
-
-[node name="Button" type="Button" parent="Player/Coin 1/Control/VBoxContainer/Better Bets Upgrade/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_hava2")
-text = "Buy"
-
-[node name="Label" type="Label" parent="Player/Coin 1/Control/VBoxContainer/Better Bets Upgrade/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_hava2")
-text = "Better Bets: +1 to Tails
-"
+[node name="Coin" parent="Player" instance=ExtResource("1_vkyyl")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_1rldk")
@@ -230,11 +48,3 @@ offset_bottom = 107.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_hava2")
-
-[connection signal="flipped_heads" from="Player/Coin 1" to="Player" method="_on_coin_1_flipped_heads"]
-[connection signal="flipped_rare" from="Player/Coin 1" to="Player" method="_on_coin_1_flipped_rare"]
-[connection signal="flipped_tails" from="Player/Coin 1" to="Player" method="_on_coin_1_flipped_tails"]
-[connection signal="input_event" from="Player/Coin 1/Model/Area3D" to="Player/Coin 1" method="_on_area_3d_input_event"]
-[connection signal="animation_finished" from="Player/Coin 1/AnimationPlayer" to="Player/Coin 1" method="_on_animation_player_animation_finished"]
-[connection signal="pressed" from="Player/Coin 1/Control/VBoxContainer/Better Bets Upgrade/HBoxContainer/Button" to="Player" method="_on_button_pressed"]
-[connection signal="pressed" from="Player/Coin 1/Control/VBoxContainer/Better Bets Upgrade/HBoxContainer/Button" to="Player/Coin 1" method="_on_button_pressed"]

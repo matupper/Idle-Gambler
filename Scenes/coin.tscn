@@ -1,10 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwmf2dggsj3l5"]
+[gd_scene load_steps=9 format=3 uid="uid://bwmf2dggsj3l5"]
 
 [ext_resource type="PackedScene" uid="uid://8h28p758yre2" path="res://Assets/Coin assets/Coin.glb" id="1_jk5jd"]
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="1_qwc5r"]
-[ext_resource type="Script" path="res://Scripts/better_bets.gd" id="3_o2v6a"]
-[ext_resource type="Texture2D" uid="uid://c8x2lh72bfgg1" path="res://Assets/Icons/placeholder img.webp" id="4_vfr5k"]
-[ext_resource type="FontFile" uid="uid://bydbsoi1mfcgb" path="res://Assets/Fonts/depixel/DePixelHalbfett.ttf" id="5_nd8ya"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_un6hs"]
 height = 0.242715
@@ -142,49 +139,6 @@ shape = SubResource("CylinderShape3D_un6hs")
 libraries = {
 "": SubResource("AnimationLibrary_41r78")
 }
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1076.52
-offset_top = 367.966
-offset_right = 2276.52
-offset_bottom = 1017.97
-scale = Vector2(0.321735, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 45
-
-[node name="Better Bets Upgrade" type="Control" parent="Control/VBoxContainer"]
-layout_mode = 2
-script = ExtResource("3_o2v6a")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Better Bets Upgrade"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/Better Bets Upgrade/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("4_vfr5k")
-expand_mode = 2
-
-[node name="Button" type="Button" parent="Control/VBoxContainer/Better Bets Upgrade/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_nd8ya")
-text = "Buy"
-
-[node name="Label" type="Label" parent="Control/VBoxContainer/Better Bets Upgrade/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_nd8ya")
-text = "Better Bets: +1 to Tails
-"
 
 [connection signal="input_event" from="Model/Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
