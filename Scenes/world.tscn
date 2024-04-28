@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://p8qio2kn8lnr" path="res://Scenes/upgrade_button.tscn" id="3_j8fbb"]
 
 [sub_resource type="Environment" id="Environment_x744l"]
-background_color = Color(0.529412, 0.819608, 1, 1)
+background_mode = 1
+background_color = Color(0, 0.647059, 0.913725, 1)
 glow_enabled = true
 glow_blend_mode = 4
 
