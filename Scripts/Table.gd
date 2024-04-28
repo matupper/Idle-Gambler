@@ -12,7 +12,7 @@ enum Level {
 	THREE
 }
 
-var current_level = Level.TWO
+var current_level = Level.ONE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,5 +30,3 @@ func _process(delta):
 			table1.visible = false
 			table2.visible = false
 			table3.visible = true
-			
-	pass
