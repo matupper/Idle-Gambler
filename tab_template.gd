@@ -30,3 +30,7 @@ func _process(_delta):
 func _on_multiplier_button_pressed():
 	globalVars.money -= 1
 	globalVars.coins[coin].multiplier += 1
+
+
+func _on_close_tabs_pressed():
+	globalVars.upgradeUI = false
