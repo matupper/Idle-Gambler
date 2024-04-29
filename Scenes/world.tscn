@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdsyiicjq00x"]
+[gd_scene load_steps=13 format=3 uid="uid://bdsyiicjq00x"]
 
 [ext_resource type="PackedScene" uid="uid://c17mgjr7ai2gt" path="res://Scenes/upgrade_ui.tscn" id="1_6iudb"]
 [ext_resource type="PackedScene" uid="uid://bq76a8dgwm3et" path="res://Scenes/table.tscn" id="1_bib7j"]
@@ -14,6 +14,94 @@ glow_enabled = true
 glow_blend_mode = 4
 
 [sub_resource type="QuadMesh" id="QuadMesh_ekx30"]
+
+[sub_resource type="Animation" id="Animation_ssexr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.610865, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8dlgo"]
+resource_name = "ToTable2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector3(0, 5, 5), Vector3(0, 6, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector3(-0.610865, 0, 0), Vector3(-0.785398, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y71dh"]
+resource_name = "ToTable3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector3(0, 6, 5), Vector3(0, 6, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector3(-0.785398, 0, 0), Vector3(-0.872665, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k6wa8"]
+_data = {
+"RESET": SubResource("Animation_ssexr"),
+"ToTable2": SubResource("Animation_8dlgo"),
+"ToTable3": SubResource("Animation_y71dh")
+}
 
 [node name="World" type="Node3D"]
 
@@ -36,8 +124,8 @@ transform = Transform3D(50, 0, 0, 0, -2.18557e-06, 50, 0, -50, -2.18557e-06, 0, 
 mesh = SubResource("QuadMesh_ekx30")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573577, 0, -0.573577, 0.819152, 0, 5, 5)
-fov = 87.0135
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 5, 5)
+fov = 90.0
 
 [node name="Upgrade_UI" parent="Camera3D" instance=ExtResource("1_6iudb")]
 
@@ -46,6 +134,12 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.4, 0.8, 
 
 [node name="Upgrade_Button" parent="Camera3D" instance=ExtResource("3_j8fbb")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.961, 0.5, -0.638)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_k6wa8")
+}
 
 [node name="Player" type="Node3D" parent="."]
 

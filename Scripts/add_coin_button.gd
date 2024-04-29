@@ -4,6 +4,7 @@ extends Node3D
 @onready var coinTemplate = preload("res://Scenes/coin.tscn")
 @onready var cost_text = $Price
 @onready var buy_text = $Buy
+@onready var cam = $"../../Camera3D/AnimationPlayer"
 
 var cost = 25
 
@@ -35,5 +36,9 @@ func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
 			cost *= 3
 		elif table_upgrade:
 			if globalVars.money >= table_cost:
+				if globalVars.currTable == 0:
+					cam.play("ToTable2")
+				elif  globalVars.currTable == 1:
+					cam.play("ToTable3")
 				globalVars.currTable += 1
 				table_cost *= 10
