@@ -127,6 +127,9 @@ mesh = SubResource("QuadMesh_ekx30")
 transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 5, 5)
 fov = 90.0
 
+[node name="Add_Coin_Button" parent="Camera3D" instance=ExtResource("3_b3q1p")]
+transform = Transform3D(0.7, 0, 0, 0, 0.573406, 0.401504, 0, -0.401504, 0.573406, 0.12, -0.699997, -0.921003)
+
 [node name="Upgrade_UI" parent="Camera3D" instance=ExtResource("1_6iudb")]
 
 [node name="MoneyLabel" parent="Camera3D" instance=ExtResource("1_x6m2r")]
@@ -142,8 +145,5 @@ libraries = {
 }
 
 [node name="Player" type="Node3D" parent="."]
-
-[node name="Add_Coin_Button" parent="Player" instance=ExtResource("3_b3q1p")]
-transform = Transform3D(0.7, 0, 0, 0, 0.239414, 0.657785, 0, -0.657785, 0.239414, 0.12, 3.89833, 4.64706)
 
 [node name="Coin 1" parent="Player" instance=ExtResource("1_vkyyl")]

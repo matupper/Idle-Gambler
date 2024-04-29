@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var player = self.get_parent_node_3d()
+@onready var player = $"../../Player"
 @onready var coinTemplate = preload("res://Scenes/coin.tscn")
 @onready var cost_text = $Price
 @onready var buy_text = $Buy
