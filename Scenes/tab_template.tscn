@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://boxpe0fs6jy6u"]
+[gd_scene load_steps=3 format=3 uid="uid://boxpe0fs6jy6u"]
 
 [ext_resource type="Script" path="res://Scripts/tab_template.gd" id="1_hmqvx"]
+[ext_resource type="AudioStream" uid="uid://cxyjfg7hoy432" path="res://Assets/SFX/deck_ui_navigation.wav" id="2_hhulc"]
 
 [node name="Tab" type="TabBar"]
 anchors_preset = 15
@@ -348,6 +349,11 @@ offset_bottom = 25.0
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
 bbcode_enabled = true
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hhulc")
+volume_db = -4.0
+pitch_scale = 0.5
 
 [connection signal="pressed" from="Auto-Flip/Auto-Flip Button" to="." method="_on_auto_flip_button_pressed"]
 [connection signal="pressed" from="Multiplier/Multiplier Button" to="." method="_on_multiplier_button_pressed"]

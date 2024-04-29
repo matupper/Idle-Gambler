@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq76a8dgwm3et"]
+[gd_scene load_steps=6 format=3 uid="uid://bq76a8dgwm3et"]
 
 [ext_resource type="Script" path="res://Scripts/Table.gd" id="1_pslnw"]
 [ext_resource type="PackedScene" uid="uid://rvh7nkwkgvd5" path="res://Assets/Table assets/Table1/Table1.gltf" id="2_nkh28"]
 [ext_resource type="PackedScene" uid="uid://dg1uccpn8jkxi" path="res://Assets/Table assets/Table2/Table2.gltf" id="3_up3ar"]
 [ext_resource type="PackedScene" uid="uid://vii06cxix5ec" path="res://Assets/Table assets/Table3/Table3.gltf" id="4_p6n55"]
+[ext_resource type="AudioStream" uid="uid://b1y7nscero4bu" path="res://Assets/2024_spring_jam_music.mp3" id="5_fe8jm"]
 
 [node name="Table" type="Node3D"]
 script = ExtResource("1_pslnw")
@@ -18,3 +19,7 @@ visible = false
 
 [node name="Table3" parent="." instance=ExtResource("4_p6n55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.62, 0)
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fe8jm")
+volume_db = -10.0

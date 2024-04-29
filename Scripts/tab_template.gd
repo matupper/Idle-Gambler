@@ -87,16 +87,19 @@ func _buy(cost):
 	return false
 
 func _on_multiplier_button_pressed():
+	$click.play()
 	if _buy(multiplier_cost):
 		coin.multiplier += 1
 		multiplier_cost *= 2
 
 
 func _on_close_tabs_pressed():
+	$click.play()
 	globalVars.upgradeUI = false
 
 
 func _on_auto_flip_button_pressed():
+	$click.play()
 	if _buy(auto_flip_cost):
 		if coin.autoflip:
 			coin.autoflip_speed -= .5
@@ -106,30 +109,35 @@ func _on_auto_flip_button_pressed():
 
 
 func _on_tails_val_button_pressed():
+	$click.play()
 	if _buy(tails_val_cost):
 		coin.tails_value += 1
 		tails_val_cost *= 3
 
 
 func _on_heads_val_button_pressed():
+	$click.play()
 	if _buy(heads_val_cost):
 		coin.heads_value += 1
 		heads_val_cost *= 3
 
 
 func _on_flip_speed_button_pressed():
+	$click.play()
 	if _buy(flip_speed_cost):
 		coin.anim_speed += .1
 		flip_speed_cost *= 4
 
 
 func _on_flip_chance_button_pressed():
+	$click.play()
 	if _buy(flip_chance_cost):
 		coin.flip_chance += 1
 		flip_chance_cost *= 4
 
 
 func _on_rare_chance_button_pressed():
+	$click.play()
 	if _buy(rare_chance_cost):
 		coin.rare_chance -= 10
 		rare_chance_cost *= 2.5

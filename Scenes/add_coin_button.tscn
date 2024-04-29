@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ge84eehfuudo"]
+[gd_scene load_steps=8 format=3 uid="uid://ge84eehfuudo"]
 
 [ext_resource type="Script" path="res://Scripts/add_coin_button.gd" id="1_iq8gd"]
+[ext_resource type="AudioStream" uid="uid://cxyjfg7hoy432" path="res://Assets/SFX/deck_ui_navigation.wav" id="2_kj6sl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1gec"]
 albedo_color = Color(1.25, 1.25, 1.25, 1)
@@ -39,5 +40,9 @@ mesh = SubResource("TextMesh_dgyly")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Buy/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206398, -0.00432585, -0.00592041)
 shape = SubResource("BoxShape3D_jyrcr")
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kj6sl")
+volume_db = -4.0
 
 [connection signal="input_event" from="Buy/Area3D" to="." method="_on_area_3d_input_event"]
