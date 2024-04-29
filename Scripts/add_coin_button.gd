@@ -39,7 +39,7 @@ func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
 			numCoins += 1
 			newCoin.coinID = numCoins
 			player.add_child(newCoin)
-			cost *= 3
+			cost *= 5
 		elif table_upgrade:
 			if globalVars.money >= table_cost:
 				if globalVars.currTable == 0:

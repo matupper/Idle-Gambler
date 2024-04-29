@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cemfsmp6668my"]
+[gd_scene load_steps=13 format=3 uid="uid://cemfsmp6668my"]
 
 [ext_resource type="Script" path="res://Scripts/money_label.gd" id="1_42kl6"]
 
@@ -12,6 +12,16 @@ font_size = 10
 horizontal_alignment = 2
 depth = 0.025
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bs04"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_sqky6"]
+material = SubResource("StandardMaterial3D_3bs04")
+text = "0"
+font_size = 8
+horizontal_alignment = 2
+depth = 0.025
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2gr7"]
 albedo_color = Color(1, 1.5, 1, 1)
 
@@ -19,6 +29,15 @@ albedo_color = Color(1, 1.5, 1, 1)
 material = SubResource("StandardMaterial3D_j2gr7")
 text = "$"
 font_size = 12
+depth = 0.025
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oprle"]
+albedo_color = Color(1.5, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_g8edc"]
+material = SubResource("StandardMaterial3D_oprle")
+text = "$/sec"
+font_size = 8
 depth = 0.025
 
 [sub_resource type="Animation" id="Animation_cae3a"]
@@ -88,9 +107,17 @@ script = ExtResource("1_42kl6")
 [node name="Money" type="MeshInstance3D" parent="."]
 mesh = SubResource("TextMesh_l5j76")
 
+[node name="Money2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.1, 0)
+mesh = SubResource("TextMesh_sqky6")
+
 [node name="Label" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
 mesh = SubResource("TextMesh_t1mo2")
+
+[node name="Label2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -0.1, 0)
+mesh = SubResource("TextMesh_g8edc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
