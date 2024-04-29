@@ -44,5 +44,6 @@ shape = SubResource("BoxShape3D_jyrcr")
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_kj6sl")
 volume_db = -4.0
+pitch_scale = 0.5
 
 [connection signal="input_event" from="Buy/Area3D" to="." method="_on_area_3d_input_event"]

@@ -353,7 +353,6 @@ bbcode_enabled = true
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_hhulc")
 volume_db = -4.0
-pitch_scale = 0.5
 
 [connection signal="pressed" from="Auto-Flip/Auto-Flip Button" to="." method="_on_auto_flip_button_pressed"]
 [connection signal="pressed" from="Multiplier/Multiplier Button" to="." method="_on_multiplier_button_pressed"]
