@@ -7,6 +7,8 @@ extends Node3D
 
 var cost = 1
 
+var numCoins = 1
+
 var table_upgrade : bool = false
 var table_cost = 250
 
@@ -27,6 +29,8 @@ func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
 		if not table_upgrade and globalVars.money >= cost:
 			globalVars.money -= cost
 			var newCoin = coinTemplate.instantiate()
+			numCoins += 1
+			newCoin.coinID = numCoins
 			player.add_child(newCoin)
 			cost *= 3
 		elif table_upgrade:

@@ -16,7 +16,7 @@ var flip_outcome
 var rare_flip
 
 var gain = 0
-
+var coinID = 1
 @onready var outline = $Outline
 
 @onready var animation_player = $AnimationPlayer
@@ -34,6 +34,8 @@ func _process(_delta):
 	
 	animation_player.speed_scale = anim_speed
 	audio_stream.pitch_scale = anim_speed
+	
+	position = globalVars.table_positions[globalVars.currTable][coinID - 1]
 
 func _autoflip_run():
 	autoflip_on = true
