@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Idle Coin Flip"
+config/description="Spring Beaver 2024 Game Jame Submission"
 run/main_scene="res://Scenes/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.0823529, 0.0823529, 0.0823529, 1)
+boot_splash/image="res://Assets/Big Coin PNG.png"
+boot_splash/fullsize=false
+config/icon="res://Assets/Big Coin PNG.png"
 
 [autoload]
 
