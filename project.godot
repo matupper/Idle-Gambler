@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Idle Gambler"
+config/name="Idle Coin Flip"
 run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
