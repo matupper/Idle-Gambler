@@ -215,7 +215,7 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0hwt"]
-albedo_color = Color(2, 2, 0.5, 1)
+albedo_color = Color(0.5, 2, 0.5, 1)
 
 [sub_resource type="TorusMesh" id="TorusMesh_qi4ga"]
 material = SubResource("StandardMaterial3D_d0hwt")

@@ -336,6 +336,19 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Close"
 
+[node name="Coin-Value" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 25.0
+
+[node name="Value" type="RichTextLabel" parent="Coin-Value"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 25.0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+bbcode_enabled = true
+
 [connection signal="pressed" from="Auto-Flip/Auto-Flip Button" to="." method="_on_auto_flip_button_pressed"]
 [connection signal="pressed" from="Multiplier/Multiplier Button" to="." method="_on_multiplier_button_pressed"]
 [connection signal="pressed" from="Tails-Val/Tails-Val Button" to="." method="_on_tails_val_button_pressed"]

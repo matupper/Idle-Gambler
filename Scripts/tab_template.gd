@@ -48,6 +48,7 @@ func _process(_delta):
 	else:
 		coin.outline.visible = false
 	
+	$"Coin-Value/Value".text = "Dollars per flip ~ " + str(coin.multiplier * int(coin.tails_value + coin.heads_value / 2))
 	_update_cost_texts()
 	_update_texts()
 
