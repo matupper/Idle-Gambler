@@ -2,7 +2,7 @@ extends Node
 
 var coins = []
 
-var money = 0
+var money = 1001
 
 var total_flips = 0
 
@@ -25,6 +25,6 @@ const table3_positions = [Vector3(0, 0, 0), Vector3(-1.5, 0, 0), Vector3(1.5, 0,
 	
 const table_positions = [table1_positions, table2_positions, table3_positions]
 
-func _process(_delta):
-	if money == 1002:
-		money += 2
+#func _process(_delta):
+	#if money == 1002:
+		#money += 2
