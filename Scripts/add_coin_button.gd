@@ -20,6 +20,7 @@ func _process(_delta):
 		table_upgrade = true
 		cost_text.mesh.text = str(table_cost)
 		buy_text.mesh.text = "Upgrade Table: $"
+		self.position.x = .25
 		buy_text.mesh.material.albedo_color = Color(2, 1, 1)
 	elif globalVars.coins.size() >= globalVars.table_positions[globalVars.currTable].size():
 		sold_out = true
@@ -29,6 +30,7 @@ func _process(_delta):
 	else:
 		buy_text.mesh.material.albedo_color = Color(1, 2, 1)
 		table_upgrade = false
+		self.position.x = .125
 		buy_text.mesh.text = "Buy Coin: $"
 
 func _on_area_3d_input_event(_camera, event, _position, _normal, _shape_idx):
