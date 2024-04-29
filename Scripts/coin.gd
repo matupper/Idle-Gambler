@@ -9,7 +9,7 @@ var anim_speed : float = 1
 var rare_chance : int = 1000
 var flip_chance : int = 2
 var autoflip : bool = false
-var autoflip_speed : float = 4
+var autoflip_speed : float = 3
 var autoflip_on : bool = false
 
 var flip_outcome
