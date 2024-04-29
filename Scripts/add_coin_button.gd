@@ -5,7 +5,7 @@ extends Node3D
 @onready var cost_text = $Price
 @onready var buy_text = $Buy
 
-var cost = 1
+var cost = 25
 
 var numCoins = 1
 
